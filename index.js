@@ -8,15 +8,15 @@ const app = express();
 const port = 3000;
 
 // Define a route to search for a specific ID in the CSV file and fetch APIs
-app.get('/product/:id', async (req, res) => {
-  const { id } = req.params;
+app.get('/product/:name', async (req, res) => {
+  const { name } = req.params;
   let rowData;
 
   // Replace 'yourfile.csv' with the path to your CSV file
   fs.createReadStream('products.csv')
     .pipe(csv())
     .on('data', (data) => {
-      if (data["ID Product"] === id) { // Assuming 'id' is the column header for IDs in the CSV
+      if (data["Nom*"] === name) { // Assuming 'id' is the column header for IDs in the CSV
         rowData = data;
       }
     })
