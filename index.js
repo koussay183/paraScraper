@@ -48,7 +48,7 @@ app.get('/product/:name', async (req, res) => {
       try {
         const response2 = await axios.get(`https://pharma-shop.tn/jolisearch?s=${encodeURIComponent(rowData["Nom*"])}&ajax=true&id_lang=1&maxRows=10`);
         const responseData2 = response2.data?.products;
-
+        res.json({responseData2})
         function getObjectByPname(array, pname) {
             for (let i = 0; i < array.length; i++) {
                 if (array[i].pname === pname) {
