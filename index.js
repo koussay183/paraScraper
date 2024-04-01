@@ -47,8 +47,8 @@ app.get('/product/:name', async (req, res) => {
       // 2 -------------------------------------------------------------------------------
       try {
         const response2 = await axios.get(`https://pharma-shop.tn/jolisearch?s=${encodeURIComponent(rowData["Nom*"])}&ajax=true&id_lang=1&maxRows=10`);
-        const responseData2 = response2.data?.products;
-        return res.json({responseData2});
+        var responseData2 = response2.data?.products;
+        
         function getObjectByPname(array, pname) {
             for (let i = 0; i < array.length; i++) {
                 if (array[i].pname === pname) {
@@ -69,7 +69,7 @@ app.get('/product/:name', async (req, res) => {
       } catch (error) {
         console.error(`Error fetching data for block 2:`, error.message);
       }
-
+      return res.json({responseData2});
       // 3 -------------------------------------------------------------------------------
       try {
         const response3 = await axios.post(`https://letriomedical.tn/recherche?s=${encodeURIComponent(rowData["Nom*"])}&resultsPerPage=1`);
