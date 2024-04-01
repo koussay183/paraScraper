@@ -46,7 +46,25 @@ app.get('/product/:name', async (req, res) => {
 
       // 2 -------------------------------------------------------------------------------
       try {
-        const response2 = await axios.get(`https://pharma-shop.tn/jolisearch?s=${encodeURIComponent(rowData["Nom*"])}&ajax=true&id_lang=1&maxRows=10`);
+        // const response2 = await axios.get(`https://pharma-shop.tn/jolisearch?s=${encodeURIComponent(rowData["Nom*"])}&ajax=true&id_lang=1&maxRows=10`);
+        const response2 = await fetch(`https://pharma-shop.tn/jolisearch?s=${encodeURIComponent(rowData["Nom*"])}&ajax=true&id_lang=1&maxRows=10`, {
+          "headers": {
+            "accept": "application/json, text/javascript, */*; q=0.01",
+            "accept-language": "en,de-DE;q=0.9,de;q=0.8,en-US;q=0.7,ar;q=0.6,fr;q=0.5",
+            "sec-ch-ua": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "same-origin",
+            "x-requested-with": "XMLHttpRequest",
+            "cookie": "_gcl_au=1.1.2044371648.1711034181; _ga=GA1.2.538080854.1711034190; PHPSESSID=1ddec1804c3c8e034dfe3d1dc8dcd8b0; PrestaShop-28730698c5345b8a5d2897b2579ee654=def50200ca5e1e1c7332f09d74bdad46f744762ad8853aa798fd3dedecb549939692ae4d878cfc80da53c322467af53c24f525b36e8026703165ee5aa7dfde8c2ceb56ad7657e555c5905073f15b96a13f7b7351c24855f031daf5d68c7988292b624ce5a44fd4f35a0ce46b6708610105b99269b299b4fd7da113f2682ebfbb3ab817186e8a96b4137dd9d73e3b9d510f5d18255c94b3313e0beb109dd936861adbf8a344f5603a58c9185485aca79b1d6ba360bb03ac0274d32fd5e1ec6a67ebec83d65cb73cc7f0074ccdd4a086dc804420c9491110ba86e67f3a2f9ab55a991a58db70521a5964d5c2b9484db2530421f129bbb43d7dc4115f4d31; lsc_private=c004dd007db86b474fdfe38ada0bf244; _gid=GA1.2.1685193940.1711948875; _gat=1; _ga_NMB8J56438=GS1.2.1711948875.10.0.1711948875.0.0.0; cf_clearance=E6rWDXkFEmqkg5Ehy3mXYEpupiFjuqVOQPUlmqk8Z1A-1711948883-1.0.1.1-k4bPUoZWjTvoj6Wb7OyhiAXVr5YmEM4v8dYgs8NIrVVPqpC64mxL85hFtImeyhlLp_WcCTb_usuKCWtzs5DL4g",
+            "Referer": "https://pharma-shop.tn/",
+            "Referrer-Policy": "strict-origin-when-cross-origin"
+          },
+          "body": null,
+          "method": "GET"
+        });
         const responseData2 = response2.data?.products;
         console.log(responseData2);
         console.log(response2);
