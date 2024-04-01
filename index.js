@@ -37,7 +37,8 @@ app.get('/product/:name', async (req, res) => {
                 url: responseData1?.url,
                 website: "https://www.maparatunisie.tn/",
                 websiteName: "maparatunisie.tn",
-                price: $1('ins .woocommerce-Price-amount').text().trim()
+                price: $1('ins .woocommerce-Price-amount').text().trim(),
+                logoUrl : "https://www.maparatunisie.tn/wp-content/uploads/2021/01/logo-01.png"
             });
         }
       } catch (error) {
@@ -82,6 +83,7 @@ app.get('/product/:name', async (req, res) => {
                 websiteName: "pharma-shop.tn",
                 price: x?.price,
                 url: x?.link,
+                logoUrl : "https://pharma-shop.tn/img/logo.png"
             });
         }
       } catch (error) {
@@ -98,6 +100,7 @@ app.get('/product/:name', async (req, res) => {
                 websiteName: "letriomedical.tn",
                 price: responseData3?.products[0]?.price,
                 url: responseData3?.products[0]?.link,
+                logoUrl : "https://letriomedical.tn/img/le-trio-medical-logo-1603563639.jpg"
             });
         }
       } catch (error) {
@@ -122,6 +125,7 @@ app.get('/product/:name', async (req, res) => {
                 website: "https://tunisiepara.com/",
                 websiteName: "tunisiepara.com",
                 price: $4('ins .woocommerce-Price-amount').text().trim()
+                , logoUrl : "https://tunisiepara.com/wp-content/uploads/2022/05/tunisiepara-logo-home.png"
             });
         }
       } catch (error) {
@@ -138,6 +142,7 @@ app.get('/product/:name', async (req, res) => {
                 websiteName: "www.parafendri.tn",
                 price: responseData5?.products[0]?.price,
                 url: responseData5?.products[0]?.link,
+                logoUrl : "https://www.parafendri.tn/img/fendri-logo-1622646839.jpg"
             });
         }
       } catch (error) {
@@ -156,6 +161,7 @@ app.get('/product/:name', async (req, res) => {
                 websiteName: "pharma-shop.tn",
                 price: $6('ins .woocommerce-Price-amount').text().trim(),
                 url: responseData6?.url,
+                logoUrl : "https://pharma-shop.tn/img/logo.png"
             });
         }
       } catch (error) {
@@ -172,6 +178,7 @@ app.get('/product/:name', async (req, res) => {
                 websiteName: "www.paralabel.tn",
                 price: responseData7?.products[0]?.price,
                 url: responseData7?.products[0]?.link,
+                logoUrl : "https://www.paralabel.tn/img/paralabel-logo-1615365996.jpg"
             });
         }
       } catch (error) {
@@ -190,6 +197,7 @@ app.get('/product/:name', async (req, res) => {
             websiteName: "parapharmacietunisie.tn",
             price: $8('ul.list-group li.list-group-item a').first().find('div span').text().trim(),
             url: $8('ul.list-group li.list-group-item a').first().attr('href'),
+            logoUrl : "https://www.parapharmacietunisie.tn/public/uploads/all/z6zBKMS0eUmB3KPZfeexMb5dDzui6wjCweJkzxRo.png"
         });
       }
       } catch (error) {
@@ -206,6 +214,7 @@ app.get('/product/:name', async (req, res) => {
             websiteName: "para-boutik.tn",
             price: responseData9?.products[0]?.price,
             url: responseData9?.products[0]?.link,
+            logoUrl : "https://para-boutik.tn/img/logo-1684861420.jpg"
         });
       }
       } catch (error) {
@@ -232,6 +241,7 @@ app.get('/product/:name', async (req, res) => {
             websiteName: "parashop.tn",
             price: n?.price,
             url: n?.href,
+            logoUrl : "https://www.parashop.tn/image/cache/catalog/logo-parashop-250x100-250x100.png.webp"
         });
       }
       } catch (error) {
