@@ -38,6 +38,7 @@ app.get('/product/:name', async (req, res) => {
                 website: "https://www.maparatunisie.tn/",
                 websiteName: "maparatunisie.tn",
                 price: $1('ins .woocommerce-Price-amount').text().trim(),
+                availability : "disponible",
                 logoUrl : "https://www.maparatunisie.tn/wp-content/uploads/2021/01/logo-01.png"
             });
         }
@@ -83,6 +84,7 @@ app.get('/product/:name', async (req, res) => {
                 websiteName: "pharma-shop.tn",
                 price: x?.price,
                 url: x?.link,
+                availability : "disponible",
                 logoUrl : "https://pharma-shop.tn/img/logo.png"
             });
         }
@@ -100,6 +102,7 @@ app.get('/product/:name', async (req, res) => {
                 websiteName: "letriomedical.tn",
                 price: responseData3?.products[0]?.price,
                 url: responseData3?.products[0]?.link,
+                availability  : "disponible",
                 logoUrl : "https://letriomedical.tn/img/le-trio-medical-logo-1603563639.jpg"
             });
         }
@@ -124,8 +127,9 @@ app.get('/product/:name', async (req, res) => {
                 url: responseData4?.url,
                 website: "https://tunisiepara.com/",
                 websiteName: "tunisiepara.com",
-                price: $4('ins .woocommerce-Price-amount').text().trim()
-                , logoUrl : "https://tunisiepara.com/wp-content/uploads/2022/05/tunisiepara-logo-home.png"
+                price: $4('ins .woocommerce-Price-amount').text().trim(),
+                availability : "disponible",
+                logoUrl : "https://tunisiepara.com/wp-content/uploads/2022/05/tunisiepara-logo-home.png"
             });
         }
       } catch (error) {
@@ -142,6 +146,7 @@ app.get('/product/:name', async (req, res) => {
                 websiteName: "www.parafendri.tn",
                 price: responseData5?.products[0]?.price,
                 url: responseData5?.products[0]?.link,
+                availability : "disponible",
                 logoUrl : "https://www.parafendri.tn/img/fendri-logo-1622646839.jpg"
             });
         }
@@ -161,6 +166,7 @@ app.get('/product/:name', async (req, res) => {
                 websiteName: "pharma-shop.tn",
                 price: $6('ins .woocommerce-Price-amount').text().trim(),
                 url: responseData6?.url,
+                availability : "disponible",
                 logoUrl : "https://pharma-shop.tn/img/logo.png"
             });
         }
@@ -178,6 +184,7 @@ app.get('/product/:name', async (req, res) => {
                 websiteName: "www.paralabel.tn",
                 price: responseData7?.products[0]?.price,
                 url: responseData7?.products[0]?.link,
+                availability : "disponible",
                 logoUrl : "https://www.paralabel.tn/img/paralabel-logo-1615365996.jpg"
             });
         }
@@ -197,6 +204,7 @@ app.get('/product/:name', async (req, res) => {
             websiteName: "parapharmacietunisie.tn",
             price: $8('ul.list-group li.list-group-item a').first().find('div span').text().trim(),
             url: $8('ul.list-group li.list-group-item a').first().attr('href'),
+            availability : "disponible",
             logoUrl : "https://www.parapharmacietunisie.tn/public/uploads/all/z6zBKMS0eUmB3KPZfeexMb5dDzui6wjCweJkzxRo.png"
         });
       }
@@ -213,7 +221,7 @@ app.get('/product/:name', async (req, res) => {
             website: "https://para-boutik.tn/",
             websiteName: "para-boutik.tn",
             price: responseData9?.products[0]?.price,
-            url: responseData9?.products[0]?.link,
+            url: responseData9?.products[0]?.link,availability : "disponible",
             logoUrl : "https://para-boutik.tn/img/logo-1684861420.jpg"
         });
       }
@@ -239,7 +247,7 @@ app.get('/product/:name', async (req, res) => {
         rowData.availableIn.push({
             website: "https://www.parashop.tn/",
             websiteName: "parashop.tn",
-            price: n?.price,
+            price: n?.price,availability : "disponible",
             url: n?.href,
             logoUrl : "https://www.parashop.tn/image/cache/catalog/logo-parashop-250x100-250x100.png.webp"
         });
