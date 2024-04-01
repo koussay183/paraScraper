@@ -66,11 +66,9 @@ app.get('/product/:name', async (req, res) => {
           "method": "GET"
         });
         const responseData2 = response2.data?.products;
-        console.log(responseData2);
-        console.log(response2);
         function getObjectByPname(array, pname) {
-            for (let i = 0; i < array.length; i++) {
-                if (array[i].pname === pname) {
+            for (let i = 0; i < array?.length; i++) {
+                if (array[i]?.pname === pname) {
                     return array[i];
                 }
             }
